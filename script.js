@@ -237,33 +237,42 @@ document.addEventListener('DOMContentLoaded', function() {
 // ============================================
 
 window.mostrarSeccion = function(seccion) {
-
     localStorage.setItem('ultimaSeccion', seccion);
 
-    // Si es configuración, ocultar pestañas de servicios y mostrar pestañas de configuración
+    if (seccion === 'calendario') {
+        document.getElementById('pestanasSuperiores').style.display = 'none';
+        document.getElementById('pestanasConfiguracion').style.display = 'none';
+        document.querySelector('.contenido-principal').classList.remove('con-pestanas');
+        document.querySelector('.contenido-principal').classList.remove('con-pestanas-config');
+
+        document.querySelectorAll('.seccion-contenido').forEach(s => s.classList.add('oculto'));
+        document.getElementById('seccion-calendario').classList.remove('oculto');
+
+        document.querySelectorAll('.btn-menu-lateral').forEach(btn => btn.classList.remove('activo'));
+        const btnCal = document.querySelector('.btn-menu-lateral[data-seccion="calendario"]');
+        if (btnCal) btnCal.classList.add('activo');
+
+        inicializarCalendario();
+
+        if (window.innerWidth < 1025) toggleMenuLateral();
+        return;
+    }
+
     if (seccion === 'configuracion') {
         document.getElementById('pestanasSuperiores').style.display = 'none';
         document.getElementById('pestanasConfiguracion').style.display = 'flex';
         document.querySelector('.contenido-principal').classList.remove('con-pestanas');
         document.querySelector('.contenido-principal').classList.add('con-pestanas-config');
-        
-        // Ocultar todas las secciones
+
         document.querySelectorAll('.seccion-contenido').forEach(s => s.classList.add('oculto'));
-        
-        // Mostrar solo configuración
         document.getElementById('seccion-configuracion').classList.remove('oculto');
-        
-        // Actualizar botón activo
+
         document.querySelectorAll('.btn-menu-lateral').forEach(btn => btn.classList.remove('activo'));
         document.querySelector('.btn-menu-lateral[onclick*="configuracion"]').classList.add('activo');
-        
-        // Mostrar la primera pestaña de configuración (logo)
+
         mostrarPestanaConfig('logo');
-        
-        // Cerrar menú en móvil
-        if (window.innerWidth < 1025) {
-            toggleMenuLateral();
-        }
+
+        if (window.innerWidth < 1025) toggleMenuLateral();
     }
 }
 
