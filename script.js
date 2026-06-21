@@ -281,7 +281,7 @@ window.mostrarSeccion = function(seccion) {
 // ============================================
 
 window.mostrarServicio = function(servicio) {
-    anioCalendario = new Date().getFullYear();
+    //anioCalendario = new Date().getFullYear();
     servicioActual = servicio;
     
     // Guardar el servicio actual
