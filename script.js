@@ -1121,7 +1121,12 @@ window.abrirModalEditarCliente = function(id) {
                 document.getElementById('editClienteDireccion').value = cliente.direccion;
                 document.getElementById('editClienteTelefono').value = cliente.telefono;
                 document.getElementById('editClienteCorreo').value = cliente.correo;
-                
+
+                // NUEVOS CAMPOS
+                document.getElementById('editClientePrevCiclo1').value = cliente.prevCiclo1 || '';
+                document.getElementById('editClientePrevCiclo2').value = cliente.prevCiclo2 || '';
+                document.getElementById('editClienteMetrologia').value = cliente.metrologia || '';
+
                 document.getElementById('modalEditarCliente').style.display = 'block';
             }
         });
