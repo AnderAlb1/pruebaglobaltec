@@ -272,6 +272,7 @@ window.mostrarSeccion = function(seccion) {
 // ============================================
 
 window.mostrarServicio = function(servicio) {
+    anioCalendario = new Date().getFullYear();
     servicioActual = servicio;
     
     // Guardar el servicio actual
@@ -2061,6 +2062,8 @@ document.getElementById('formEditarEquipo').addEventListener('submit', function(
 window.onclick = function(event) {
     const modalCliente = document.getElementById('modalEditarCliente');
     const modalEquipo = document.getElementById('modalEditarEquipo');
+    const modalCal = document.getElementById('modalCalendario');
+    if (event.target == modalCal) cerrarModalCalendario();
     if (event.target == modalCliente) {
         cerrarModalCliente();
     }
