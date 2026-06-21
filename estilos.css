@@ -1404,9 +1404,9 @@ button[type="submit"]:disabled {
     background: #45a049;
 }
 
-.calendario-contenedor { max-width: 1200px; }
+.calendario-contenedor { max-width: 1200px; display: flex; flex-direction: column; }
 
-.calendario-nav { display: flex; align-items: center; justify-content: center; gap: 30px; margin-bottom: 15px; }
+.calendario-nav { display: flex; align-items: center; justify-content: center; gap: 30px; margin-top: 15px; margin-bottom: 5px; order: 2; }
 
 .btn-nav-anio { background: #2c3e50; color: white; border: none; border-radius: 50%; width: 38px; height: 38px; font-size: 18px; cursor: pointer; transition: background 0.3s; display: flex; align-items: center; justify-content: center; }
 
@@ -1414,15 +1414,7 @@ button[type="submit"]:disabled {
 
 .anio-actual { font-size: 26px; font-weight: bold; color: #2c3e50; min-width: 80px; text-align: center; }
 
-.leyenda-item { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #555; }
-
-.dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
-
-.dot-preventivo { background: #3498db; }
-.dot-metrologia { background: #9b59b6; }
-.dot-manual { background: #e67e22; }
-
-.calendario-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+.calendario-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; order: 1; }
 
 @media (max-width: 1024px) { .calendario-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 640px) { .calendario-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; } .cal-mes-nombre { font-size: 11px; } }
@@ -1454,8 +1446,6 @@ button[type="submit"]:disabled {
 .cal-entrada-nombre { flex: 1; color: #2c3e50; font-weight: 500; word-break: break-word; font-size: 11px; line-height: 1.3; }
 
 .cal-tachado .cal-entrada-nombre { text-decoration: line-through; color: #4CAF50; }
-.cal-entrada.realizado { background: #e8f5e9; border-left-color: #4CAF50; }
-.cal-entrada.realizado .cal-entrada-nombre { text-decoration: line-through; color: #4CAF50; font-weight: bold; }
 
 .cal-entrada-acciones { display: flex; gap: 3px; flex-shrink: 0; }
 
@@ -1472,8 +1462,4 @@ button[type="submit"]:disabled {
 .cal-btn-agregar { width: calc(100% - 16px); margin: 6px 8px 8px 8px; padding: 5px; background: #f0f9f0; color: #4CAF50; border: 1px dashed #4CAF50; border-radius: 5px; font-size: 12px; cursor: pointer; transition: all 0.2s; font-weight: bold; }
 
 .cal-btn-agregar:hover { background: #4CAF50; color: white; border-style: solid; }
-
-.calendario-nav { order: 2; margin-top: 15px; margin-bottom: 5px; }
-.calendario-grid { order: 1; }
-.calendario-contenedor { display: flex; flex-direction: column; }
 
