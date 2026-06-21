@@ -1153,7 +1153,12 @@ document.getElementById('formEditarCliente').addEventListener('submit', async fu
         nombre,
         direccion,
         telefono,
-        correo
+        correo,
+        // ── NUEVOS CAMPOS ──
+        prevCiclo1: document.getElementById('editClientePrevCiclo1').value || '',
+        prevCiclo2: document.getElementById('editClientePrevCiclo2').value || '',
+        metrologia: document.getElementById('editClienteMetrologia').value || '',
+        // ── FIN NUEVOS CAMPOS ──
     };
 
     // Guardar en Firestore
