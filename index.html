@@ -80,7 +80,7 @@
     <nav class="menu-lateral" id="menuLateral">
     <div class="menu-lateral-content">
         <button onclick="mostrarSeccion('calendario')" class="btn-menu-lateral" data-seccion="calendario">
-            <span class="icon">📅</span> Calendario
+            <span class="icon">📅</span> Programación
         </button>
         <button onclick="mostrarServicio('biomedico')" class="btn-menu-lateral" data-servicio="biomedico">
             <span class="icon">⚕️</span> Servicio Biomédico
@@ -417,18 +417,18 @@
 
 <div id="seccion-calendario" class="seccion-contenido oculto">
     <div class="contenedor calendario-contenedor">
-        <h1>📅 Calendario de Mantenimientos</h1>
+        <h1>📅 Programación de Mantenimientos</h1>
+
+        <!-- GRID 12 MESES -->
+        <div class="calendario-grid" id="calendarioGrid">
+            <!-- Se genera con JS -->
+        </div>
 
         <!-- NAVEGACIÓN DE AÑO -->
         <div class="calendario-nav">
             <button class="btn-nav-anio" onclick="cambiarAnioCalendario(-1)">&#8592;</button>
             <span class="anio-actual" id="anioCalendario">2025</span>
             <button class="btn-nav-anio" onclick="cambiarAnioCalendario(1)">&#8594;</button>
-        </div>
-
-        <!-- GRID 12 MESES -->
-        <div class="calendario-grid" id="calendarioGrid">
-            <!-- Se genera con JS -->
         </div>
     </div>
 </div>
