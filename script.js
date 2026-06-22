@@ -4390,7 +4390,7 @@ function crearTarjetaMes(mes) {
     // Botón agregar
     const btnAgregar = document.createElement('button');
     btnAgregar.className = 'cal-btn-agregar';
-    btnAgregar.textContent = '+ Agregar';
+    btnAgregar.textContent = '+';
     btnAgregar.onclick = () => abrirModalCalendario(mes);
     card.appendChild(btnAgregar);
 
