@@ -4409,11 +4409,27 @@ function crearEntrada(nombre, tipo, entradaId, mes, esManual) {
     const estaTachado = tachados[clave] === true;
 
     // Definir etiqueta según tipo
+    // Definir etiqueta según tipo
     let etiqueta = '';
-    if (entradaId.startsWith('auto-prev1-')) etiqueta = ' - <strong>CICLO 1</strong>';
-    else if (entradaId.startsWith('auto-prev2-')) etiqueta = ' - <strong>CICLO 2</strong>';
-    else if (entradaId.startsWith('auto-met-')) etiqueta = ' - <strong>METROLOGÍA</strong>';
 
+    if (entradaId.startsWith('auto-prev1-')) {
+    etiqueta = ' - <strong>CICLO 1</strong>';
+    }
+    else if (entradaId.startsWith('auto-prev2-')) {
+    etiqueta = ' - <strong>CICLO 2</strong>';
+    }
+    else if (entradaId.startsWith('auto-met-')) {
+    etiqueta = ' - <strong>METROLOGÍA</strong>';
+    }
+    else if (tipo === 'preventivo' || tipo === 'manual-preventivo') {
+    etiqueta = ' - <strong>MANTENIMIENTO PREVENTIVO</strong>';
+    }
+    else if (tipo === 'metrologia' || tipo === 'manual-metrologia') {
+    etiqueta = ' - <strong>METROLOGÍA</strong>';
+    }
+    else if (tipo === 'otro' || tipo === 'manual-otro') {
+    etiqueta = ' - <strong>OTRO</strong>';
+    }
     const nombreCompleto = nombre + etiqueta;
 
     const div = document.createElement('div');
@@ -4467,7 +4483,6 @@ function crearEntrada(nombre, tipo, entradaId, mes, esManual) {
         tachados[clave] = false;
         div.classList.remove('realizado');
     }
-
     return div;
 }
 
